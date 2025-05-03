@@ -1,0 +1,315 @@
+body {
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-color: pink; */
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .focus-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    
+    border-radius: 20px;
+    border: 4px solid #5e35b1; /* Deep purple border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+  }
+  
+  .cat-gif {
+    width: 150px;
+    margin-bottom: 20px;
+    border-radius:50%;
+  }
+  
+  .mode-selector {
+    margin-bottom: 20px;
+  }
+  
+  .mode-selector label {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #5e35b1;
+  }
+  
+  .timer-box {
+    background: #fff;
+    border: 3px dashed #ba68c8;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(90, 50, 120, 0.2);
+  }
+  
+  .timer-box h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #5e35b1;
+  }
+  
+  .music-toggle {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #7e57c2;
+  }
+  
+  .button-group {
+    margin: 20px 0;
+  }
+  
+  .start-btn, .stop-btn {
+    background: #7e57c2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .start-btn:hover, .stop-btn:hover {
+    background: #5e35b1;
+  }
+  
+  .divider {
+    margin: 30px 0;
+    border-top: 2px dashed #ba68c8;
+  }
+  
+  .session-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .session-list li {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .session-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .session-table th, .session-table td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .session-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .session-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .session-table tr:hover {
+    background-color: #e6f7ff;
+  }
+  /* General Button Style */
+  button {
+    background-color: #aa8989; /* soft pink */
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #ffcad4; /* lighter pink on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Start Button */
+  .start-btn {
+    background-color: #23b881; /* light mint */
+    font-weight: bold;
+  }
+  
+  /* Stop Button */
+  .stop-btn {
+    background-color: #83471f; /* soft peach */
+    font-weight: bold;
+  }
+  
+  /* Custom Timer Input Box */
+  .custom-timer input,
+  .custom-cycles input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 8px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Music Toggle */
+  .music-toggle {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+  
+  /* Input placeholder text */
+  input::placeholder {
+    color: #aaa;
+  }
+  .timer-count {
+    font-size: 4rem; /* BIG digits */
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; /* Digital clock feel */
+    text-align: center;
+    margin: 20px 0;
+    color: #333; /* Dark color for readability */
+    text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+  }
+  .session-history-container {
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Optional: Add padding for spacing */
+  }
+  
+  .session-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .session-table th, .session-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .app-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 60px;
+    box-shadow: 0 4px 15px rgba(11, 1, 31, 0.9);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .app-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .app-title {
+    margin-top: 15px;
+    color: #5e35b1;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .badge-display {
+    margin-top: 20px;
+    padding: 16px;
+    background-color: #fef6fb;
+    border: 2px dashed #ecb3d4;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .badge-display h3 {
+    margin-bottom: 10px;
+    color: #d56ba8;
+    font-weight: bold;
+  }
+  
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    background: linear-gradient(135deg, #ffe0f0, #ffc2d1);
+    color: #720d5d;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .badge:hover {
+    transform: scale(1.1);
+    cursor: default;
+  }
+  .badge-progress {
+    margin-top: 10px;
+    text-align: center;
+    color: #6b0f49;
+  }
+  
+  .badge-progress progress {
+    width: 80%;
+    height: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffe3ee;
+  }
+  .badges-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .badges-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .badge {
+    background: #f2f2f2;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  }
+
+
+
