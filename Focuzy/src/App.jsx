@@ -1,15 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FocusTimer from './Components/FocusTimer';
-// import Focuzy from './components/Focuzy';
+import SessionHistory from './Components/SessionHistory';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      {/* <h1>🎯 Focuzy</h1> */}
-      <FocusTimer />
-      {/* <Focuzy/> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<FocusTimer />} />
+        <Route path="/history" element={<SessionHistory />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -25,6 +25,8 @@ const FocusTimer = () => {
   const audioRef = useRef(null);
 
   const [badges, setBadges] = useState([]);
+  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState('');
    
   const generateBadge = (score) => {
     if (score >= 90) return '🌟 Focus Master';
@@ -141,6 +143,17 @@ const FocusTimer = () => {
 
     return () => clearInterval(distractionChecker);
   }, [active, isStudyTime]);
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const formatTime = (totalSeconds) => {
     const mins = Math.floor(totalSeconds / 60);
@@ -285,6 +298,28 @@ const FocusTimer = () => {
   
     return Math.max(0, Math.min(100, Math.round(score)));
   };
+
+  const handleAddTodo = () => {
+    if (todoInput.trim()) {
+      const newTodo = {
+        id: Date.now(),
+        text: todoInput.trim(),
+        completed: false
+      };
+      setTodos([...todos, newTodo]);
+      setTodoInput('');
+    }
+  };
+
+  const handleToggleTodo = (id) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
+  const handleDeleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
   
   return (
     <FocusTimerDisplay
@@ -298,10 +333,16 @@ const FocusTimer = () => {
       playMusic={playMusic}
       active={active}
       sessions={sessions}
+      todos={todos}
+      todoInput={todoInput}
       setCustomTime={setCustomTime}
       setCustomBreakTime={setCustomBreakTime}
       setTotalCycles={setTotalCycles}
       setPlayMusic={setPlayMusic}
+      setTodoInput={setTodoInput}
+      handleAddTodo={handleAddTodo}
+      handleToggleTodo={handleToggleTodo}
+      handleDeleteTodo={handleDeleteTodo}
       setPreset={setPreset}
       handleCustomTimeSet={handleCustomTimeSet}
       startFocusSession={startFocusSession}
